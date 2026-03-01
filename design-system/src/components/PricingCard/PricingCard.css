@@ -1,0 +1,94 @@
+.ds-pricing-card {
+    background-color: var(--color-background-card);
+    border-radius: var(--radius-lg);
+    padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    max-width: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ds-pricing-card::before {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, #ffffff, #ffffff10);
+    mix-blend-mode: overlay;
+    padding: 2px;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ds-pricing-card::after {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    box-sizing: border-box;
+    background: linear-gradient(-180deg, #ffffff, #ffffff);
+    mix-blend-mode: overlay;
+    padding: 2px;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 30%;
+}
+
+.ds-pricing-card>* {
+    position: relative;
+    z-index: 10;
+}
+
+.ds-pricing-card:hover {
+    background-color: var(--color-background-card-hover);
+}
+
+.ds-pricing-card-title {
+    margin-bottom: 2px;
+}
+
+.ds-pricing-card-price-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.ds-pricing-card-price {
+    font-size: 61px;
+}
+
+.ds-pricing-card-frequency {
+    font-size: 20px;
+}
+
+.ds-pricing-card-description {
+    margin-bottom: 30px;
+}
+
+.ds-pricing-card-features {
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.ds-pricing-card-button-wrapper {
+    width: 100%;
+    display: flex;
+}
+
+.ds-pricing-card-button {
+    width: 100%;
+}

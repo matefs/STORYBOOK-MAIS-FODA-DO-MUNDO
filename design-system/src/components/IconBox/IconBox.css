@@ -1,0 +1,41 @@
+.ds-iconbox {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    text-align: left;
+}
+
+.ds-iconbox-img-wrapper {
+    flex-shrink: 0;
+    width: 30%;
+    max-width: 100px;
+}
+
+.ds-iconbox-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease-in-out;
+    object-fit: cover;
+}
+
+.ds-iconbox:hover .ds-iconbox-img {
+    filter: brightness(110%) contrast(90%);
+}
+
+.ds-iconbox-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.ds-iconbox-title {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.ds-iconbox-description {
+    margin: 0;
+    font-size: 18px;
+}

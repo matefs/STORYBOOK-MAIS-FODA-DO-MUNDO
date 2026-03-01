@@ -1,0 +1,52 @@
+.ds-heading {
+    font-family: var(--font-family-primary, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif);
+    font-weight: 400;
+    color: var(--color-primary);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.ds-text {
+    font-family: var(--font-family-primary, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif);
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Base sizes based on tokens */
+.ds-text-xs {
+    font-size: var(--font-size-xs);
+}
+
+.ds-text-sm {
+    font-size: var(--font-size-sm);
+}
+
+.ds-text-md {
+    font-size: var(--font-size-md);
+}
+
+.ds-text-lg {
+    font-size: var(--font-size-lg);
+}
+
+.ds-text-xl {
+    font-size: var(--font-size-xl);
+}
+
+.ds-text-2xl {
+    font-size: var(--font-size-2xl);
+}
+
+.ds-text-3xl {
+    font-size: var(--font-size-3xl);
+}
+
+/* Color overrides */
+.ds-color-primary {
+    color: var(--color-primary);
+}
+
+.ds-color-secondary {
+    color: var(--color-secondary);
+}

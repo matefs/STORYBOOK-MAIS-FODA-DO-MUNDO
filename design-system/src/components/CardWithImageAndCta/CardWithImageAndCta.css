@@ -1,0 +1,151 @@
+.ds-card-image-cta {
+    background-color: var(--color-background-card, #0F0F0F);
+    border-radius: var(--radius-xl, 30px);
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-family: var(--font-family-primary, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif);
+}
+
+.ds-card-image-cta--img-left {
+    flex-direction: row-reverse;
+}
+
+/* Glassmorphism Borders Effect from design-system */
+.ds-card-image-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, #ffffff, #ffffff10);
+    mix-blend-mode: overlay;
+    padding: 1px;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ds-card-image-cta::after {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    box-sizing: border-box;
+    background: linear-gradient(-180deg, #ffffff, #ffffff);
+    mix-blend-mode: overlay;
+    padding: 1px;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 30%;
+}
+
+.ds-card-image-cta>* {
+    position: relative;
+    z-index: 10;
+}
+
+.ds-card-image-cta-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 450px;
+}
+
+.ds-card-image-cta-overline {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #D29474;
+    /* Earthy orange colour matching given image */
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+    font-family: var(--font-family-primary, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif);
+}
+
+.ds-card-image-cta-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.ds-card-image-cta-description {
+    margin-top: 0;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    max-width: 400px;
+    color: #A0A0A0;
+    /* Slight gray tint fitting design */
+}
+
+.ds-card-image-cta-button-wrapper {
+    margin-top: 10px;
+}
+
+.ds-card-image-cta-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    border-radius: var(--radius-lg, 20px);
+    overflow: hidden;
+    position: relative;
+    min-height: 350px;
+}
+
+.ds-card-image-cta-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--radius-lg, 20px);
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    .ds-card-image-cta {
+        flex-direction: column;
+        padding: 30px;
+        align-items: center;
+    }
+
+    .ds-card-image-cta--img-left {
+        flex-direction: column-reverse;
+    }
+
+    .ds-card-image-cta-content {
+        max-width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .ds-card-image-cta-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .ds-card-image-cta-image-container {
+        width: 100%;
+        min-height: 250px;
+        justify-content: center;
+    }
+}

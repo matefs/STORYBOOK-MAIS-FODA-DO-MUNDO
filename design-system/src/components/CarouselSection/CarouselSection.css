@@ -1,0 +1,96 @@
+.ds-carousel-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.ds-carousel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--spacing-md);
+}
+
+.ds-carousel-title {
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.ds-carousel-nav {
+    display: flex;
+    gap: 12px;
+}
+
+.ds-carousel-nav-btn {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-primary);
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ds-carousel-nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.ds-carousel-viewport {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.ds-carousel-viewport::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+.ds-carousel-track {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 20px;
+    /* Optional spacing if they clip out of bounds occasionally */
+}
+
+.ds-carousel-item {
+    flex: 0 0 auto;
+    width: calc(100% - 40px);
+    max-width: 300px;
+    /* Base card width */
+}
+
+.ds-carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
+/* Responsive tweaks */
+@media (min-width: 768px) {
+    .ds-carousel-item {
+        width: 320px;
+        max-width: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .ds-carousel-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+}

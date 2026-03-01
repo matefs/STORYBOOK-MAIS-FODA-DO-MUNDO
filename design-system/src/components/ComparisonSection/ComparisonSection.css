@@ -1,0 +1,196 @@
+.ds-comparison {
+  padding: 80px 20px;
+  background-color: var(--color-background);
+  text-align: center;
+  font-family: var(--font-family-primary);
+}
+
+.ds-comparison__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.ds-comparison__pre-title {
+  font-size: 14px;
+  color: #f16517;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  letter-spacing: 1.5px;
+}
+
+.ds-comparison__title {
+  font-size: 40px;
+  color: #fff;
+  font-weight: 700;
+  margin: 0 0 60px 0;
+}
+
+.ds-comparison__table {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ds-comparison__col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ds-comparison__head {
+  height: 80px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 25px;
+  font-weight: 700;
+  border-bottom: 1px solid transparent;
+  box-sizing: border-box;
+}
+
+.ds-comparison__head-features {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  justify-content: flex-start;
+}
+
+.ds-comparison__head-other,
+.ds-comparison__head-chatgpt {
+  font-size: 20px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.ds-comparison__cell {
+  height: 60px;
+  /* Fixed height so rows align across columns */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  /* Unified divider */
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.ds-comparison__cell-feature {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  font-weight: 500;
+  justify-content: flex-start;
+  padding-left: 0;
+}
+
+/* Remove bottom border from the last cells to match card */
+.ds-comparison__col-features .ds-comparison__cell:last-child,
+.ds-comparison__col-other .ds-comparison__cell:last-child,
+.ds-comparison__col-chatgpt .ds-comparison__cell:last-child {
+  border-bottom: none;
+}
+
+.ds-comparison__col-brand {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(135deg, rgba(80, 35, 10, 0.5) 0%, rgba(20, 10, 5, 0.95) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(241, 101, 23, 0.4);
+  box-shadow: 0px 10px 40px rgba(241, 101, 23, 0.05);
+  padding: 15px 0 0 0;
+  /* inner padding */
+  margin-bottom: -15px;
+  /* Extend below the grid a bit */
+  animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 0 0 rgba(241, 101, 23, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 15px rgba(241, 101, 23, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(241, 101, 23, 0);
+  }
+}
+
+.ds-comparison__col-brand .ds-comparison__head {
+  height: 65px;
+  /* shorter head relative to the card's inner padding */
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ds-comparison__col-brand .ds-comparison__cell {
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.ds-comparison__col-brand .ds-comparison__cell:last-child {
+  border-bottom: none;
+}
+
+.ds-comparison__logo {
+  max-width: 150px;
+}
+
+.ds-comparison__check {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.ds-comparison__cell-other-item,
+.ds-comparison__cell-chatgpt-item {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 18px;
+}
+
+.ds-comparison__cross {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+
+  .ds-comparison__head-other,
+  .ds-comparison__head-chatgpt {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ds-comparison__table {
+    flex-direction: column;
+    gap: 40px;
+    align-items: stretch;
+  }
+
+  .ds-comparison__col-brand {
+    transform: none;
+    margin-bottom: 0;
+  }
+
+  .ds-comparison__head {
+    height: auto;
+    padding-bottom: 15px;
+    justify-content: center;
+  }
+
+  .ds-comparison__col-features {
+    text-align: center;
+  }
+
+  .ds-comparison__cell-feature {
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}

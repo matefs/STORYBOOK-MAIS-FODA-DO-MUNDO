@@ -1,0 +1,62 @@
+.ds-hero {
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 80vh;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ds-hero::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(241, 101, 23, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.ds-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.ds-hero-title {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.ds-hero-title strong {
+    font-weight: 700;
+    display: inline-block;
+    background: linear-gradient(90deg, #FFFFFF, #959595);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ds-hero-title .ds-highlight-orange {
+    color: var(--color-accent-orange);
+}
+
+.ds-hero-subtitle {
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.ds-hero-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: 10px;
+}

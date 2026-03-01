@@ -1,0 +1,38 @@
+:root {
+  /* Colors */
+  --color-primary: #FFFFFF;
+  --color-secondary: #959595;
+  --color-background-app: #000000;
+  --color-background-card: #0F0F0F;
+  --color-background-card-hover: #181818;
+  --color-border: #FFFFFF20;
+  --color-accent-orange: #F16517;
+  --color-accent-green: #2D6330;
+  --color-accent-light-green: #A5FFB5;
+  --color-button-dark: #424242;
+
+  /* Typography */
+  --font-family-primary: "Helvetica", "Roboto", sans-serif;
+  --font-family-secondary: "Roboto Slab", serif;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 15px;
+  --font-size-md: 18px;
+  --font-size-lg: 23px;
+  --font-size-xl: 39px;
+  --font-size-2xl: 70px;
+  --font-size-3xl: 85px;
+
+  /* Spacing */
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+  --spacing-lg: 40px;
+  --spacing-xl: 90px;
+
+  /* Border Radius */
+  --radius-sm: 10px;
+  --radius-md: 20px;
+  --radius-lg: 30px;
+  --radius-xl: 40px;
+  --radius-pill: 90px;
+}
