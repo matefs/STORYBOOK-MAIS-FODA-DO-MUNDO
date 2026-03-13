@@ -3,7 +3,7 @@
   background-color: var(--color-background, #0B0B0B);
   color: var(--color-text-primary, #ffffff);
   font-family: var(--font-family-primary, 'Outfit', sans-serif);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .section-container {
@@ -12,20 +12,37 @@
   padding: 80px 20px;
 }
 
+/* MASSIVE HERO SETUP */
+.hero-custom-title {
+  font-size: clamp(3rem, 7vw, 90px) !important;
+  line-height: 1 !important;
+  display: block;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.hero-custom-subtitle {
+  font-size: clamp(1.1rem, 2vw, 24px) !important;
+  font-weight: 300;
+  display: block;
+  margin-top: 15px;
+}
+
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
-  margin-top: 40px;
+  margin-top: 60px;
   align-items: center;
   justify-content: center;
-  max-width: 900px;
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .primary-pricing-card {
   transform: scale(1.05);
+  border-color: var(--color-accent-orange);
 }
 
 @media (max-width: 768px) {
@@ -42,7 +59,7 @@
 
 .faq-title {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 
 .footer {

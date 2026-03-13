@@ -46,9 +46,13 @@ function App() {
 
       <main>
         {/* HERO SECTION */}
-        <section className="section-container" style={{ paddingTop: '120px' }}>
+        <section className="section-container hero-wrapper">
           <Hero
-            title={<>Escreva textos que vendem <span style={{ color: '#f16517' }}>10x mais</span> em segundos</>}
+            title={
+              <>
+                Escreva textos que vendem <strong>10x mais</strong> em <span style={{ color: '#F16517' }}>segundos</span>
+              </>
+            }
             subtitle="Tenha o poder dos maiores copywriters do mundo na palma da sua mão. Escreva anúncios, e-mails e páginas de vendas que convertem como mágica."
             buttonLabel="Começar meu teste grátis"
           />
@@ -88,35 +92,49 @@ function App() {
 
         {/* PRICING */}
         <section id="precos" className="section-container">
-          <Heading level={2} size="2xl" style={{ textAlign: 'center', marginBottom: '60px' }}>Planos para todo nível de negócio</Heading>
+          <Heading level={2} size="2xl" style={{ textAlign: 'center', marginBottom: '60px' }}>Planos simples, resultados gigantes</Heading>
 
           <div className="pricing-grid">
             <PricingCard
-              title="Iniciante"
+              title="Plano Iniciante"
               price="R$ 47"
               frequency="/mês"
-              description="Ideal para quem está começando agora e precisa validar ofertas."
+              description="Ideal para testar o poder de uma copy matadora."
               features={[
-                "Acesso aos templates básicos",
-                "Geração de até 50 copys/mês",
-                "Suporte por email"
+                "Copys limitadas a 50/mês",
+                "Acesso aos modelos essenciais",
+                "Suporte por e-mail",
               ]}
-              buttonLabel="Assinar Iniciante"
+              buttonLabel="Assinar plano iniciante"
             />
 
             <PricingCard
-              title="Profissional"
+              title="Plano Mensal"
               price="R$ 97"
               frequency="/mês"
-              description="Para negócios que precisam escalar suas vendas diariamente."
+              description="Tudo que você precisa incluso para alavancar hoje."
               features={[
-                "Acesso a TODOS os templates",
-                "Geração ILIMITADA de copys",
-                "Base de conhecimento RAG",
-                "Acesso ao WhatsApp da equipe"
+                "Copys ilimitadas",
+                "Base de conhecimento principal",
+                "Histórico ilimitado",
+                "Atualizações constantes"
               ]}
-              buttonLabel="Assinar Profissional"
+              buttonLabel="Assinar plano mensal"
               className="primary-pricing-card ds-pulse-glow"
+            />
+
+            <PricingCard
+              title="Plano Anual"
+              price="R$ 77"
+              frequency="/mês"
+              description="Faturado anualmente. O melhor custo-benefício para levar a sério seu negócio."
+              features={[
+                "Tudo do plano Mensal",
+                "Prioridade no suporte VIP",
+                "Modelos ocultos de copy",
+                "Treinamento de indução ao RAG"
+              ]}
+              buttonLabel="Assinar plano anual"
             />
           </div>
         </section>
@@ -125,7 +143,7 @@ function App() {
 
         {/* FAQ */}
         <section id="faq" className="faq-section">
-          <Heading level={2} size="xl" className="faq-title">Dúvidas Frequentes</Heading>
+          <Heading level={2} size="xl" className="faq-title" style={{ marginBottom: '40px' }}>Dúvidas Frequentes</Heading>
           <Accordion items={faqItems} />
         </section>
 

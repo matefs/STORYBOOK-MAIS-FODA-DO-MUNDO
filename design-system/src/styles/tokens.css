@@ -12,8 +12,8 @@
   --color-button-dark: #424242;
 
   /* Typography */
-  --font-family-primary: "Helvetica", "Roboto", sans-serif;
-  --font-family-secondary: "Roboto Slab", serif;
+  --font-family-primary: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-secondary: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   --font-size-xs: 12px;
   --font-size-sm: 15px;
