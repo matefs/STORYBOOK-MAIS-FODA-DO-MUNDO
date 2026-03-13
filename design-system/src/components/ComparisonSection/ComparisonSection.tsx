@@ -29,8 +29,9 @@ export const ComparisonSection = () => {
             <div className="ds-comparison__head ds-comparison__head-brand">
               <img src="https://lp.thecopypocket.com/wp-content/uploads/2025/12/LOGO.svg" alt="Copy Pocket" className="ds-comparison__logo" />
             </div>
-            {rows.map((_, i) => (
+            {rows.map((r, i) => (
               <div className="ds-comparison__cell ds-comparison__cell-brand-item" key={'b' + i}>
+                <span className="ds-comparison__mobile-label">{r.label}</span>
                 <img
                   src="https://lp.thecopypocket.com/wp-content/uploads/2025/12/lucide_verified-1.png"
                   alt="Check"
@@ -44,6 +45,7 @@ export const ComparisonSection = () => {
             <div className="ds-comparison__head ds-comparison__head-other">Outras plataformas</div>
             {rows.map((r, i) => (
               <div className="ds-comparison__cell ds-comparison__cell-other-item" key={'o' + i}>
+                <span className="ds-comparison__mobile-label">{r.label}</span>
                 {r.others === false ? (
                   <img src="https://lp.thecopypocket.com/wp-content/uploads/2025/12/Group-2.svg" alt="Cross" className="ds-comparison__cross" />
                 ) : (
@@ -57,6 +59,7 @@ export const ComparisonSection = () => {
             <div className="ds-comparison__head ds-comparison__head-chatgpt">ChatGPT</div>
             {rows.map((r, i) => (
               <div className="ds-comparison__cell ds-comparison__cell-chatgpt-item" key={'c' + i}>
+                <span className="ds-comparison__mobile-label">{r.label}</span>
                 {r.chatgpt === false ? (
                   <img src="https://lp.thecopypocket.com/wp-content/uploads/2025/12/Group-2.svg" alt="Cross" className="ds-comparison__cross" />
                 ) : (
