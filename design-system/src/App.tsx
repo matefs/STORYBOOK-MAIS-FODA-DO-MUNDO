@@ -1,10 +1,12 @@
+import React, { useEffect } from 'react';
 import './App.css';
+import Lenis from 'lenis';
 
 import { Header } from './components/Header/Header';
 import { Hero } from './components/Hero/Hero';
 import { ComponenteTeste } from './components/ComponenteTeste/ComponenteTeste';
+import { FeaturesShowcase } from './components/FeaturesShowcase/FeaturesShowcase';
 import { ComparisonSection } from './components/ComparisonSection/ComparisonSection';
-import { CardWithImageAndCta } from './components/CardWithImageAndCta/CardWithImageAndCta';
 import { PricingCard } from './components/PricingCard/PricingCard';
 import { Accordion } from './components/Accordion/Accordion';
 import { Divider } from './components/Divider/Divider';
@@ -36,12 +38,56 @@ function App() {
     }
   ];
 
+  useEffect(() => {
+    // Inicializa o Lenis Smooth Scroll
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+    });
+
+    (window as any).lenisInstance = lenis; // Globais para facilitar na âncora simples sem Redux
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // Limpa o lenis na desmontagem
+    return () => {
+      lenis.destroy();
+      delete (window as any).lenisInstance;
+    };
+  }, []);
+
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        const lenis = (window as any).lenisInstance;
+        if (lenis) {
+          lenis.scrollTo(target);
+        } else {
+          target.scrollIntoView({ behavior: 'smooth' }); // Fallback if Lenis is not available
+        }
+      }
+    }
+  };
+
   return (
     <div className="app-container">
       <Header
         logoUrl="https://lp.thecopypocket.com/wp-content/uploads/2025/12/LOGO.svg"
         links={headerLinks}
         onLoginClick={() => alert('Área de login em breve!')}
+        onLinkClick={handleAnchorClick}
       />
 
       <main>
@@ -76,17 +122,9 @@ function App() {
 
         <Divider />
 
-        {/* CTA IMAGE MIX */}
-        <section className="section-container">
-          <CardWithImageAndCta
-            overline="RESULTADOS IMEDIATOS"
-            title="Sua conversão não pode esperar."
-            description="Não perca mais tempo tentando adivinhar o que escreve ou contratando redatores que não entendem o seu produto. Gere sua copy validada com apenas alguns cliques."
-            buttonText="Quero aumentar minhas vendas"
-            imagePosition="left"
-            imageUrl="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2000&auto=format&fit=crop"
-          />
-        </section>
+
+
+        <FeaturesShowcase />
 
         <Divider />
 

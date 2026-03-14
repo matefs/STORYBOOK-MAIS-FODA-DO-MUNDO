@@ -6,10 +6,11 @@ export interface HeaderProps {
     logoUrl?: string;
     links: { label: string; href: string }[];
     onLoginClick?: () => void;
+    onLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
     className?: string;
 }
 
-export const Header = ({ logoUrl, links, onLoginClick, className = '' }: HeaderProps) => {
+export const Header = ({ logoUrl, links, onLoginClick, onLinkClick, className = '' }: HeaderProps) => {
     return (
         <header className={['ds-header', className].join(' ')}>
             <div className="ds-header-container">
@@ -20,7 +21,13 @@ export const Header = ({ logoUrl, links, onLoginClick, className = '' }: HeaderP
                     <ul className="ds-header-nav-list">
                         {links.map((link, idx) => (
                             <li key={idx} className="ds-header-nav-item">
-                                <a href={link.href} className="ds-header-nav-link">{link.label}</a>
+                                <a
+                                    href={link.href}
+                                    className="ds-header-nav-link"
+                                    onClick={(e) => onLinkClick?.(e, link.href)}
+                                >
+                                    {link.label}
+                                </a>
                             </li>
                         ))}
                     </ul>
