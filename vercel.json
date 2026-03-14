@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd design-system && npm run build",
+  "buildCommand": "cd design-system && npx vite build",
   "outputDirectory": "design-system/dist",
   "installCommand": "cd design-system && npm install",
   "framework": "vite"
