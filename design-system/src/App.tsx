@@ -108,9 +108,7 @@ function App() {
 
         {/* HOW IT WORKS / COMPONENTE TESTE */}
         <section id="funcionalidades" style={{ background: 'var(--color-surface, #121212)' }}>
-          <div className="section-container">
-            <ComponenteTeste />
-          </div>
+          <ComponenteTeste />
         </section>
 
         <Divider />

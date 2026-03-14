@@ -6,7 +6,7 @@
 }
 
 .ds-comparison__inner {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -31,7 +31,7 @@
   justify-content: center;
   align-items: flex-end;
   gap: 0;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -163,6 +163,7 @@
 }
 
 @media (max-width: 900px) {
+
   .ds-comparison__head-other,
   .ds-comparison__head-chatgpt {
     font-size: 16px;
@@ -233,7 +234,7 @@
     line-height: 1.4;
   }
 
-  .ds-comparison__check, 
+  .ds-comparison__check,
   .ds-comparison__cross {
     width: 20px;
     height: 20px;

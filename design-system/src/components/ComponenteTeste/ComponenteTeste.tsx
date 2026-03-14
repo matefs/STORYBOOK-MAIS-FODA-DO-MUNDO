@@ -51,6 +51,7 @@ export const ComponenteTeste: React.FC<ComponenteTesteProps> = ({
     return (
         <section className="ds-teste-section">
             <h2 className="ds-teste-section-title">Como funciona</h2>
+            <p className="ds-teste-section-subtitle">Apenas 3 cliques separam você de uma copy de classe mundial, gerada usando nossos frameworks de alta conversão sem complicação.</p>
             <div
                 className="ds-teste-container ds-teste-container--side-image"
                 style={{
