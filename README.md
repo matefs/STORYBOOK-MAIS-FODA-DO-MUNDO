@@ -3,7 +3,7 @@
  
 Repositório responsável por armazenar:
 - Assets do projeto
-- Landing pages base
+- Landing page base
 - Design System
 
 Stack utilizada:
