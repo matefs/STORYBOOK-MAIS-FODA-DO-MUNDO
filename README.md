@@ -1,4 +1,6 @@
 # Copy Pocket
+<img width="1889" height="906" alt="image" src="https://github.com/user-attachments/assets/928fb7d7-9f82-44b5-ba88-2b146e8fc964" />
+
 ### cd design-system
 ### npm run storybook 
 Repositório que armazena os assets, landing pages e o Design System com React, Vite e Storybook para o projeto Copy Pocket.
